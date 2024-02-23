@@ -1,0 +1,31 @@
+To start your application:
+
+update your start script in package.json to use
+
+react-scripts --openssl-legacy-provider start
+To build your application:
+
+update your build script in package.json to use
+
+react-scripts --openssl-legacy-provider build
+
+
+/****************************************************************************************/
+Before Node 17.x versions, It uses OpenSSL 2 version. NodeJS uses OpenSSL for hash functionality code. The OpenSSL 3 disables MD4, Due to that Nodejs is broken in the latest Nodejs versions.
+
+Solution
+
+Linux users:
+export NODE_OPTIONS=--openssl-legacy-provider
+Windows users:
+set NODE_OPTIONS=--openssl-legacy-provider
+You can add: NODE_OPTIONS=--openssl-legacy-provider to npm scripts.
+
+
+/******************************************************************************************/
+
+Changing localhost to 127.0.0.1
+
+Changing it to the network ip
+
+adding forward slashes to the end of both both
